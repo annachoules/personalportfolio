@@ -1,5 +1,5 @@
 # My personal portfolio page #
-## This is where I'm shwoing my project/ skills ##
+## This is where I'm showing my project/ skills ##
 
-:simple_smile:
+:smile:
 :yellow_heart:
