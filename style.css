@@ -1,3 +1,140 @@
-h1 {
-    color: burlywood;
-}
+:root {
+    --main-gray: #212D41;
+    --main-white: #FEF7EB;
+    --dark-green: #527AB8;
+    --light-green: #DDA580;
+    --light-gray: #8CACDA;
+    --highlight: #E4F2E7;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  #navbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--light-green);
+    position: fixed;
+    width: 100%;
+    color:aliceblue;
+  }
+  
+  .navList a {
+    display: block;
+    padding: 1.5rem;
+    color: var(--main-white);
+    font-size: xx-large;
+  }
+  
+  .navList a:hover {
+    background-color: #999999;
+  }
+  
+  #welcome-section {
+    background-color: var(--main-gray);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 { 
+    font-size: 4rem;
+    padding: 4rem;
+  }
+  
+  h2 {
+    padding: 4rem;
+    font-size: 3rem;
+  }
+  
+  ul {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  #projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--dark-green);
+  }
+  
+  .project-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  #contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--light-green);
+  }
+  
+  .contact-links {
+    display: flex;
+  }
+  
+  .contact-links a {
+    display: block;
+    padding: 2rem 3rem;
+    font-size: xx-large;
+  }
+  
+  footer {
+    padding: 3rem;
+    text-align: center;
+    background-color: var(--light-green);
+    color: var(--highlight);
+  }
+  
+  figure {
+    margin: 2rem;
+  }
+  
+  figure img {
+    width: 20rem;
+  }
+  
+  figcaption {
+    background-color: #CBEAFF;
+    text-align: center;
+    font-size: x-large;
+    border-radius: 2px 2px 6px 6px;
+  }
+  
+  .contact-details {
+    transition: transform 0.3s ease-out;
+  }
+  
+  .contact-details:hover {
+    transform: translateY(12px);
+  }
+  
+  /* 1200px is roughly 75em */
+  @media (max-width: 75em) {
+    html {
+      font-size: 80%;
+    }
+  }
+  
+  @media (max-width: 60em) {
+    html {
+      font-size: 70%;
+      color: #151F30;
+    }
+  }
