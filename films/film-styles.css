@@ -1,0 +1,35 @@
+*{
+    margin: 2;
+    padding: 1;
+    box-sizing: border-box;
+    background-color: aliceblue;
+  }
+  
+  h1 {
+    color: black;
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  figure {
+    margin: 1.5rem;
+    
+  }
+
+  figure img {
+    border: solid;
+    border-radius: 8px;
+    border-color: red;
+  }
+  
+  
+  figcaption {
+    font-size:xx-large;
+    text-align: left;
+    color: darkblue;
+    font-family: 'Courier New', Courier, monospace;
+  }

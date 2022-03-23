@@ -1,0 +1,31 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  figure img {
+    height: 20rem;
+    border-style: double;
+    border-color: rgb(255, 208, 0);
+  }
+
+  figcaption {
+      text-align: center;
+      background-color: aliceblue;
+      border-radius: 10px;
+      font-family: 'Courier New', Courier, monospace;
+
+  }
+  
+  
+  button {
+    width: 12rem;
+    height: 3.2rem;
+    margin: 1.5rem;
+    background-color: #212D41;
+    border: solid;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+  }
