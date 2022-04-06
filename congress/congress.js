@@ -1,4 +1,7 @@
 import { senators } from '../data/senators.js'
+import { representatives } from '../data/representatives.js'
+
+const allMembersOfCongress = [...senators, ...representatives] // modern combining of array data... like a genius!
 
 const senatorsDiv = document.querySelector('.senatorsDiv')
 const seniorityHeader = document.querySelector('.seniority')
@@ -42,13 +45,9 @@ const mostSeniorMember = simplifiedSenators().reduce((acc, senator) => acc.senio
 
 const biggestMissedVotesPct = simplifiedSenators().reduce((acc, senator) => acc.missedVotesPct > senator.missedVotesPct ? acc : senator)
 
-// console.log(biggestMissedVotesPct.missedVotesPct)
+const biggestVactionerList = simplifiedSenators().filter(senator => senator.missedVotesPct === biggestMissedVotesPct.missedVotesPct).map(senator => senator.name).join(' and ')
 
-// const biggestVacationerList = simplifiedSenators().filter(senator => senator.missedVotesPct === biggestMissedVotesPct.missedVotesPct)
-
-// console.log(biggestVacationerList)
-
-seniorityHeader.textContent = `The most senior Senator is ${mostSeniorMember.name} and the biggest fans of vacations are TBD...`
+seniorityHeader.textContent = `The most senior Senator is ${mostSeniorMember.name} and the biggest fans of vacations are ${biggestVactionerList}.`
 
 simplifiedSenators().forEach(senator => {
   if(senator.loyaltyPct === 100) {
@@ -57,3 +56,9 @@ simplifiedSenators().forEach(senator => {
     loyaltyList.appendChild(listItem)
   }
 })
+
+// TODO items to consider for your final project
+// TODO: Some sort of UI for sorting by party affiliation or by party and gender with a count
+// TODO: Much better styling of the grid of senators and their names.
+// TODO: Maybe include more data with each congress member such as links to their Twitter or Facebook pages
+// TODO: Incorporate a way to select the members of the house of representatives
