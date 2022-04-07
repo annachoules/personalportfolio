@@ -1,0 +1,54 @@
+
+body {
+    background-color: #444444;
+  }
+  
+  .mainContainer {
+    display: flex;
+  }
+  
+  .shipViewer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .shipViewer img {
+    padding: 10rem;
+  }
+  
+  h1 {
+    font-size: xx-large;
+    color: aliceblue;
+    text-align: center;
+  }
+  
+  
+  .box {
+    background-color: aqua;
+  }
+  
+  .box p {
+    font-size: xx-large;
+    text-align: center;
+  }
+  
+  .nav {
+    min-width: 20rem;
+  }
+  
+  .navList {
+    margin: 1rem;
+    list-style-type: none;
+    font-size: x-large;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  li:hover {
+    background-color: aqua;
+    color: black;
+  }
