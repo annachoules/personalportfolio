@@ -52,3 +52,8 @@ body {
     background-color: aqua;
     color: black;
   }
+
+  #modal-js-example {
+      background-color: bisque;
+      text-align: center;
+  }
