@@ -53,7 +53,9 @@ const biggestVactionerList = simplifiedSenators().filter(senator => senator.miss
 
 seniorityHeader.textContent = `The most senior Senator is ${mostSeniorMember.name} and the biggest fans of vacations are ${biggestVactionerList}.`
 
-const twitter_account = simplifiedSenators().reduce((acc, senator) => acc.twitter_account > senator.twitter_account ? acc : senator)
+const biggestVactionerList = simplifiedSenators().filter(senator => senator.missedVotesPct === biggestMissedVotesPct.missedVotesPct).map(senator => twitter_account).join()
+
+const allMembersOfCongress = [...gender]
 
 simplifiedSenators().forEach(senator => {
   if(senator.loyaltyPct === 100) {
