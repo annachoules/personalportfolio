@@ -53,9 +53,11 @@ const biggestVactionerList = simplifiedSenators().filter(senator => senator.miss
 
 seniorityHeader.textContent = `The most senior Senator is ${mostSeniorMember.name} and the biggest fans of vacations are ${biggestVactionerList}.`
 
-const biggestVactionerList = simplifiedSenators().filter(senator => senator.missedVotesPct === biggestMissedVotesPct.missedVotesPct).map(senator => twitter_account).join()
 
-const allMembersOfCongress = [...gender]
+
+const govtrack_id = document.createElement('button')
+govtrack_id.textContent = 'Goverment ID'
+govtrack_id.addEventListener('click', () => populateDOM(govtrack_id))
 
 simplifiedSenators().forEach(senator => {
   if(senator.loyaltyPct === 100) {
