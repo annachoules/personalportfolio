@@ -55,9 +55,9 @@ seniorityHeader.textContent = `The most senior Senator is ${mostSeniorMember.nam
 
 
 
-const govtrack_id = document.createElement('button')
-govtrack_id.textContent = 'Goverment ID'
-govtrack_id.addEventListener('click', () => populateDOM(govtrack_id))
+const state = document.createElement('button')
+state.textContent = 'State'
+state.addEventListener('click', () => populateDOM(state))
 
 simplifiedSenators().forEach(senator => {
   if(senator.loyaltyPct === 100) {

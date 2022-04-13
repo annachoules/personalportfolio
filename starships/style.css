@@ -57,3 +57,6 @@ body {
       background-color: bisque;
       text-align: center;
   }
+  #modal {
+    padding: 4rem;
+  }
