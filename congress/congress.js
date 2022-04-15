@@ -22,7 +22,7 @@ function simplifiedSenators() {
       seniority: +senator.seniority,
       state: senator.state,
       missedVotesPct: senator.missed_votes_pct,
-      loyaltyPct: senator.votes_with_party_pct
+      loyaltyPct: senator.votes_with_party_pct,
     }
   })
 }
@@ -75,3 +75,11 @@ simplifiedSenators().forEach(senator => {
 
 console.log(biggestMissedVotesPct.missedVotesPct)
 console.log(biggestVactionerList)
+
+simplifiedSenators().forEach(senator => {
+if(senator.gender === 100) {
+  let listItem = document.createElement('li')
+  listItem.textContent = senator.name
+  loyaltyPct.appendChild(list)
+}
+})
