@@ -76,10 +76,10 @@ simplifiedSenators().forEach(senator => {
 console.log(biggestMissedVotesPct.missedVotesPct)
 console.log(biggestVactionerList)
 
-simplifiedSenators().forEach(senator => {
-if(senator.gender === 100) {
-  let listItem = document.createElement('li')
-  listItem.textContent = senator.name
-  loyaltyPct.appendChild(list)
-}
-})
+state = arr.map()
+
+function simplifiedSenators() {
+  return senators.map(senator => {
+    const middleName = senator.middle_name ? ` ${senator.middle_name} ` : ` `
+    return {
+      
