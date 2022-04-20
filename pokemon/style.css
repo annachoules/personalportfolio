@@ -1,7 +1,39 @@
 * {
-    margin: 0;
+    margin: .5;
     box-sizing: border-box;
   }
+
+  h1{
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color:blue;
+      text-transform: uppercase;
+      font-size: xxx-large;
+      text-decoration: underline;
+      text-shadow: 4px 5px black;
+  }
+
+  h4{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #00008B;
+    font-size: medium;
+    text-transform: uppercase;
+    text-shadow: 1px 1px black;
+
+}
+
+
+header > button {
+      background-color: yellow;
+      padding: 12px;
+      font-size: large;
+      border-radius: 5px;
+      margin-left: 67px;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      box-shadow: 3px 10px;
+}
+
   
   .pokegrid {
     display: flex;
@@ -12,20 +44,20 @@
     width: 200px;
     height: 260px;
     perspective: 600px;
-    margin: 1em;
+    margin: 1.5em;
   }
   
   .card {
     width: 100%;
     height: 100%;
-    transition: transform 1s;
+    transition: transform 3s;
     transform-style: preserve-3d;
     cursor: pointer;
     /* position: relative; */
   }
   
   .card.is-flipped {
-    transform: rotateY(180deg);
+    transform: rotateY(540deg);
   }
   
   .cardFace {
@@ -33,15 +65,22 @@
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    border-radius: 15px;
+    border-style: groove;
+    
   }
   
   .front {
-    background-color: rgb(162, 141, 167);
+    background-color: aqua;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
   
   .back {
     background: aliceblue;
     transform: rotateY(180deg);
+    text-align: left;
   }
   
   figure img {

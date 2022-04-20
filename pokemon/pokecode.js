@@ -1,3 +1,5 @@
+import { removeChildren } from "../utils/index.js"
+
 const getAPIData = async (url) => {
   try {
     const result = await fetch(url)
@@ -9,12 +11,12 @@ const getAPIData = async (url) => {
 
 class Pokemon {
   constructor(name, height, weight, abilities, types) {
-    this.id = 9001,
-    this.name = name,
-    this.height = height,
-    this.weight = weight,
-    this.abilities = abilities,
-    this.types = types
+    ;(this.id = 9001),
+      (this.name = name),
+      (this.height = height),
+      (this.weight = weight),
+      (this.abilities = abilities),
+      (this.types = types)
   }
 }
 
@@ -27,37 +29,68 @@ newButton.addEventListener('click', () => {
   const pokeName = prompt('What is the name of your new Pokemon?', 'Thoremon')
   const pokeHeight = prompt("What is the Pokemon's height?", 80)
   const pokeWeight = prompt("What is the Pokemon's weight?", 2000)
-  const pokeAbilities = prompt("What are your Pokemon's abilities? (use a comma separated list)")
-  const pokeTypes = prompt("What are your Pokemon's types? (up to 2 types separated by a space)")
+  const pokeAbilities = prompt(
+    "What are your Pokemon's abilities? (use a comma separated list)",
+  )
+  const pokeTypes = prompt(
+    "What are your Pokemon's types? (up to 2 types separated by a space)",
+  )
 
   const newPokemon = new Pokemon(
-    pokeName, 
-    pokeHeight, 
+    pokeName,
+    pokeHeight,
     pokeWeight,
-    makeAbilitiesArray(pokeAbilities), 
-    makeTypesArray(pokeTypes))
-    console.log(newPokemon)
-    populatePokeCard(newPokemon)
+    makeAbilitiesArray(pokeAbilities),
+    makeTypesArray(pokeTypes),
+  )
+  console.log(newPokemon)
+  populatePokeCard(newPokemon)
 })
 
-function makeAbilitiesArray(commaString) { // example comma string 'run-away, gluttony'
-return commaString.split(',').map((abilityName) => {
-  return { ability: { name: abilityName } }
-})
+function makeAbilitiesArray(commaString) {
+  // example comma string 'run-away, gluttony'
+  return commaString.split(',').map((abilityName) => {
+    return { ability: { name: abilityName } }
+  })
 }
 
-function makeTypesArray(spacedString) { // example spaced string 'poison flying'
+function makeTypesArray(spacedString) {
+  // example spaced string 'poison flying'
   return spacedString.split(' ').map((typeName) => {
     return { type: { name: typeName } }
   })
-  }
+}
 
+const grassButton = document.createElement('button')
+grassButton.textContent = 'Show Grass Power'
+pokeHeader.appendChild(grassButton)
+grassButton.addEventListener('click', () => {
+  removeChildren(pokeGrid)
+  for(const pokemon of filterPokemonByType('grass')) {
+    populatePokeCard(pokemon)
+  }
+})
+
+
+const loadedPokemon = []
 
 async function loadPokemon(offset = 0, limit = 25) {
-  const data = await getAPIData(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`)
+  const data = await getAPIData(
+    `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`,
+  )
   for (const nameAndUrl of data.results) {
     const singlePokemon = await getAPIData(nameAndUrl.url)
-    populatePokeCard(singlePokemon)
+    const simplifiedPokemon = {
+      id: singlePokemon.id,
+      height: singlePokemon.height,
+      weight: singlePokemon.weight,
+      name: singlePokemon.name,
+      abilities: singlePokemon.abilities,
+      types: singlePokemon.types,
+      moves: singlePokemon.moves.slice(0, 3),
+    }
+    loadedPokemon.push(simplifiedPokemon)
+    populatePokeCard(simplifiedPokemon)
   }
 }
 
@@ -66,7 +99,9 @@ function populatePokeCard(pokemon) {
   pokeScene.className = 'scene'
   const pokeCard = document.createElement('div')
   pokeCard.className = 'card'
-  pokeCard.addEventListener('click', () => pokeCard.classList.toggle('is-flipped'))
+  pokeCard.addEventListener('click', () =>
+  pokeCard.classList.toggle('is-flipped'),
+  )
   // populate the front of the card
   pokeCard.appendChild(populateCardFront(pokemon))
   pokeCard.appendChild(populateCardBack(pokemon))
@@ -75,9 +110,18 @@ function populatePokeCard(pokemon) {
 }
 
 function populateCardFront(pokemon) {
-  pokemon
   const pokeFront = document.createElement('figure')
   pokeFront.className = 'cardFace front'
+
+  const pokeType = pokemon.types[0].type.name
+  //const pokeType2 = pokemon.types[1]?.type.name
+  // console.log(pokeType, pokeType2)
+  pokeFront.style.setProperty('background', getPokeTypeColor(pokeType))
+
+ /*  if(pokeType2) {
+    pokeFront.style.setProperty('background', `linear-gradient(${getPokeTypeColor(pokeType)}, ${getPokeTypeColor(pokeType2)})`)
+  } */
+
   const pokeImg = document.createElement('img')
   if (pokemon.id === 9001) {
     pokeImg.src = '../images/pokeball.png'
@@ -110,5 +154,51 @@ function populateCardBack(pokemon) {
   return pokeBack
 }
 
-loadPokemon(0, 5)
+function getPokeTypeColor(pokeType) {
+  // if(pokeType === 'grass') return '#00FF00'
+  let color
+  switch (pokeType) {
+    case 'grass':
+      color = '#00FF00'
+      break
+    case 'fire':
+      color = '#FF0000'
+      break
+    case 'water':
+      color = '#0000FF'
+      break
+    case 'bug':
+      color = '#7FFF00'
+      break
+    case 'normal':
+      color = '#F5F5DC'
+      break
+    case 'flying':
+      color = '#00FFFF'
+      break
+    case 'poison':
+      color = '#C300FF'
+      break
+    case 'electric':
+      color = '#C8FF00'
+      break
+    case 'psychic':
+      color = 'pink'
+      break
+    case 'ground':
+      color = 'brown'
+      break
+    default:
+      color = '#888888'
+  }
+  return color
+}
 
+function filterPokemonByType(type) {
+  return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type)
+}
+
+await loadPokemon(0, 50)
+
+console.log(filterPokemonByType('grass'))
+// not figured out yet what the UI might be for sorted/filtered pokemon...
