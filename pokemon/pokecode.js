@@ -71,6 +71,16 @@ grassButton.addEventListener('click', () => {
   }
 })
 
+const groundButton = document.createElement('button')
+groundButton.textContent = 'Show Ground Power'
+pokeHeader.appendChild(groundButton)
+groundButton.addEventListener('click', () => {
+  removeChildren(pokeGrid)
+  for(const pokemon of filterPokemonByType('ground')) {
+    populatePokeCard(pokemon)
+  }
+})
+
 
 const loadedPokemon = []
 
