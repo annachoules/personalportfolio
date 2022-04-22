@@ -1,6 +1,7 @@
 * {
     margin: .5;
     box-sizing: border-box;
+   
   }
 
   h1{
@@ -10,34 +11,46 @@
       text-transform: uppercase;
       font-size: xxx-large;
       text-decoration: underline;
-      text-shadow: 4px 5px black;
+      text-shadow: 4px 5px white;
+      padding: 3.5rem;
+      background-color: #EBBC06;
+      margin-bottom: 0%;
+      margin-top: 0%;
   }
 
   h4{
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #00008B;
+    color: white;
     font-size: medium;
     text-transform: uppercase;
-    text-shadow: 1px 1px black;
-
+    text-shadow: 1.5px 3px black;
+    padding: 2rem;
+    background-color: #F22E2E;
+    margin-top: 0%;
 }
 
-
+header {
+    background-color: #2D649D;
+}
 header > button {
-      background-color: yellow;
-      padding: 12px;
-      font-size: large;
-      border-radius: 5px;
-      margin-left: 67px;
-      font-family:Verdana, Geneva, Tahoma, sans-serif;
-      box-shadow: 3px 10px;
+    background-color: #EBBC06;
+    padding: 12px;
+    font-size: large;
+    border-radius: 5px;
+    margin-left: 67px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 3px 10px black;
+    font-weight: bolder;
+    text-shadow: 1px 1px white;
 }
 
   
   .pokegrid {
     display: flex;
     flex-wrap: wrap;
+    background-color: #2D649D;
+    margin-top: 0%;
   }
   
   .scene {
@@ -66,7 +79,10 @@ header > button {
     height: 100%;
     backface-visibility: hidden;
     border-radius: 15px;
-    border-style: groove;
+    border-style: solid;
+    border-color: #C9A000;
+    border-width: .6rem;
+    box-shadow: 0 0 0 1.3px white;
     
   }
   
@@ -78,11 +94,29 @@ header > button {
   }
   
   .back {
-    background: aliceblue;
+    background: #EBBC06;
     transform: rotateY(180deg);
     text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+
+  figure {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
   }
   
   figure img {
     width: 200px;
   }
+
+  figcaption {
+    text-align: center;
+}
+
+ul {
+    list-style-type: ' > ';
+}

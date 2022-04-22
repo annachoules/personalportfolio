@@ -26,8 +26,8 @@ const newButton = document.createElement('button')
 newButton.textContent = 'New Pokemon'
 pokeHeader.appendChild(newButton)
 newButton.addEventListener('click', () => {
-  const pokeName = prompt('What is the name of your new Pokemon?', 'Thoremon')
-  const pokeHeight = prompt("What is the Pokemon's height?", 80)
+  const pokeName = prompt('What is the name of your new Pokemon?', 'Anna')
+  const pokeHeight = prompt("What is the Pokemon's power?", 'water')
   const pokeWeight = prompt("What is the Pokemon's weight?", 2000)
   const pokeAbilities = prompt(
     "What are your Pokemon's abilities? (use a comma separated list)",
@@ -77,6 +77,16 @@ pokeHeader.appendChild(groundButton)
 groundButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
   for(const pokemon of filterPokemonByType('ground')) {
+    populatePokeCard(pokemon)
+  }
+})
+
+const fireButton = document.createElement('button')
+fireButton.textContent = 'Show Fire Power'
+pokeHeader.appendChild(fireButton)
+fireButton.addEventListener('click', () => {
+  removeChildren(pokeGrid)
+  for(const pokemon of filterPokemonByType('fire')) {
     populatePokeCard(pokemon)
   }
 })
@@ -159,6 +169,9 @@ function populateCardBack(pokemon) {
     listItem.textContent = abilityItem.ability.name
     abilityList.appendChild(listItem)
   })
+//pokemon.types.forEach(typeItem)
+
+
   pokeBack.appendChild(abilityList)
 
   return pokeBack
@@ -169,34 +182,34 @@ function getPokeTypeColor(pokeType) {
   let color
   switch (pokeType) {
     case 'grass':
-      color = '#00FF00'
+      color = '#78C850'
       break
     case 'fire':
-      color = '#FF0000'
+      color = '#F08030'
       break
     case 'water':
-      color = '#0000FF'
+      color = '#6890F0'
       break
     case 'bug':
-      color = '#7FFF00'
+      color = '#A8B820'
       break
     case 'normal':
-      color = '#F5F5DC'
+      color = '#A8A878'
       break
     case 'flying':
-      color = '#00FFFF'
+      color = '#A890F0'
       break
     case 'poison':
-      color = '#C300FF'
+      color = '#A040A0'
       break
     case 'electric':
-      color = '#C8FF00'
+      color = '#F8D030'
       break
     case 'psychic':
-      color = 'pink'
+      color = '#F85888'
       break
     case 'ground':
-      color = 'brown'
+      color = '#E0C068'
       break
     default:
       color = '#888888'
@@ -208,7 +221,7 @@ function filterPokemonByType(type) {
   return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type)
 }
 
-await loadPokemon(0, 50)
+await loadPokemon(0, 25)
 
 console.log(filterPokemonByType('grass'))
 // not figured out yet what the UI might be for sorted/filtered pokemon...
