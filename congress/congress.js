@@ -76,10 +76,3 @@ simplifiedSenators().forEach(senator => {
 console.log(biggestMissedVotesPct.missedVotesPct)
 console.log(biggestVactionerList)
 
-state = arr.map()
-
-function simplifiedSenators() {
-  return senators.map(senator => {
-    const middleName = senator.middle_name ? ` ${senator.middle_name} ` : ` `
-    return {
-      
