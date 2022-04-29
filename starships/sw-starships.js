@@ -44,3 +44,4 @@ function populateShipView(shipData) {
   shipViewer.appendChild(shipImage)
 
 }
+ 

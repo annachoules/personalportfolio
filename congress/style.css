@@ -43,6 +43,12 @@
 
   }
 
+  select {
+    background-color: #60311D;
+    color: white;
+    padding: .5rem;
+  }
+
   figure {
     margin: 1rem;
     background-color: #60311D;
