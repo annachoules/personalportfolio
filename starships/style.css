@@ -1,6 +1,6 @@
 
 body {
-    background-color: #444444;
+    background-color: #8C4C3E;
   }
   
   .mainContainer {
@@ -18,18 +18,20 @@ body {
   }
   
   h1 {
-    font-size: xx-large;
-    color: aliceblue;
+    font-size: xxx-large;
+    color: #049DBF;
     text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 2px 3px white;
   }
   
   
   .box {
-    background-color: aqua;
+    background-color: #0378A6;
   }
   
   .box p {
-    font-size: xx-large;
+    font-size: x-large;
     text-align: center;
   }
   
@@ -49,7 +51,7 @@ body {
   }
   
   li:hover {
-    background-color: aqua;
+    background-color: #0378A6;
     color: black;
   }
 
@@ -58,5 +60,5 @@ body {
       text-align: center;
   }
   #modal {
-    padding: 4rem;
+    padding: 5rem;
   }
