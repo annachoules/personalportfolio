@@ -1,12 +1,22 @@
 main {
     display: flex;
     flex-wrap: wrap;
+    background-color: #484848;
+  }
+
+  header {
+    text-align: center;
+    background-color: #404040;
+    
   }
   
   figure img {
     height: 20rem;
     border-style: double;
     border-color: rgb(255, 208, 0);
+    display: block;
+    border-width: 7px;
+    box-shadow: 10px 10px;
   }
 
   figcaption {
@@ -28,4 +38,5 @@ main {
     color: white;
     font-family: 'Courier New', Courier, monospace;
     font-size: medium;
+    
   }

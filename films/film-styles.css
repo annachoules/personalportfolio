@@ -2,7 +2,7 @@
     margin: 2;
     padding: 1;
     box-sizing: border-box;
-    background-color: aliceblue;
+    background-color: black;
   }
   
   h1 {
@@ -24,12 +24,16 @@
     border: solid;
     border-radius: 8px;
     border-color: red;
+    border-width: 4px;
+    box-shadow: 10px 10px #181818; 
   }
   
   
   figcaption {
-    font-size:xx-large;
-    text-align: left;
-    color: darkblue;
+    font-size:x-large;
+    text-align: center;
+    color: yellow;
     font-family: 'Courier New', Courier, monospace;
+    text-shadow: -1px 0 white, 0 1.2px white, 1px 0 white, 0 -1px white;
+    padding: 10px;
   }
